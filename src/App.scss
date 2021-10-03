@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.finance{
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 20px #f3f3f3;
+  border-radius: 10px;
+  border: 1px solid #f1f1f1;
+  padding: 25px;
+
+  &__grid-titles{
+    margin-bottom: 10px;
+    p{
+      font-weight: bold;
+    }
+  }
+
+  &__grid-item{
+    margin-bottom: 20px;
+    .item-checkbox{
+      display: flex;
+      justify-content: center;
+      p{
+        align-items: center;
+        margin-left: 10px;
+      }
+    }
+
+    .item-sum{
+      margin-right: 15px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "name": "Кофе",
+      "sum": 250,
+      "count": "2 раза",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "Такси",
+      "sum": 2050,
+      "count": "2 раза",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "name": "Сигареты",
+      "sum": 30,
+      "count": "2 раза",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "name": "Сладости",
+      "sum": 50,
+      "count": "2 раза",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "name": "Фастфуд",
+      "sum": 150,
+      "count": "2 раза",
+      "completed": false
+    }
+  ]
+}
