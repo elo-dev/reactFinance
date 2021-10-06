@@ -3,37 +3,42 @@
     {
       "id": 1,
       "name": "Кофе",
-      "sum": 250,
+      "sum": 0,
       "count": "2 раза",
-      "completed": false
+      "completed": true,
+      "total": 400
     },
     {
       "id": 2,
       "name": "Такси",
-      "sum": 2050,
+      "sum": 0,
       "count": "2 раза",
-      "completed": false
+      "completed": true,
+      "total": 0
     },
     {
       "id": 3,
       "name": "Сигареты",
-      "sum": 30,
+      "sum": 0,
       "count": "2 раза",
-      "completed": false
+      "completed": false,
+      "total": 0
     },
     {
       "id": 4,
       "name": "Сладости",
-      "sum": 50,
+      "sum": 0,
       "count": "2 раза",
-      "completed": false
+      "completed": false,
+      "total": 0
     },
     {
       "id": 5,
       "name": "Фастфуд",
-      "sum": 150,
+      "sum": 0,
       "count": "2 раза",
-      "completed": false
+      "completed": false,
+      "total": 0
     }
   ]
 }

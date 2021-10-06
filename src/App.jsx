@@ -4,10 +4,15 @@ import { Col, Row } from 'antd'
 import './App.scss'
 import axios from 'axios'
 import { Preloader } from './assets/Preloader/Preloader'
-import { FinanceFields } from './Components/FinanceFields'
+import { FinanceFields } from './Components/FinanceFields/FinanceFields'
 
 const App = () => {
   const [lists, setLists] = useState(null)
+  const [total, setTotal] = useState({})
+
+  const _setTotal = (name) => (val) => setTotal({ ...total, [name]: val })
+
+  const monthSum = Object.values(total).reduce((a, b) => a + b, 0)
 
   useEffect(() => {
     axios.get('http://localhost:3001/lists').then(({ data }) => {
@@ -30,6 +35,24 @@ const App = () => {
       .catch(() => {
         alert('Не удалось сохранить чекбокс')
       })
+  }
+
+  const onEditListTitle = (listId, newTitle) => {
+    const newList = lists.map(list => {
+      if(list.id === listId){
+        list.name = newTitle
+      }
+      return list
+    })
+    setLists(newList)
+    
+    if(newTitle){
+      axios.patch('http://localhost:3001/lists/' + listId, {
+        name: newTitle
+      }).catch(() => {
+        alert('Не удалось обновить название')
+      })
+    }
   }
 
   return (
@@ -57,17 +80,19 @@ const App = () => {
                 <FinanceFields
                   key={list.id}
                   {...list}
+                  onChange={_setTotal(`name${list.id}`)}
                   onChangeCheckbox={onChangeCheckbox}
+                  onEditListTitle={onEditListTitle}
                 />
               ))}
           </div>
           <div className="finance__grid-footer">
             <p>
-              Трачу на приятные мелочи 31 400 руб в месяц - это 376 800 руб в
+              Трачу на приятные мелочи <strong>{monthSum} руб</strong> в месяц - это <strong>{monthSum * 12} руб</strong> в
               год. Если буду класть эти деньги под 4%, то через 12 месяцев
               накоплю 385 065 руб.
             </p>
-            <h2>Приятные мелочи - 385 065 руб</h2>
+            <h2>Приятные мелочи - 318 000 руб</h2>
           </div>
         </div>
       </div>
