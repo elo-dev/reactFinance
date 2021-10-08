@@ -5,7 +5,6 @@ import { FinanceFieldPopover } from './FinanceFieldPopover'
 export const FinanceFields = ({
   id,
   name,
-  count,
   completed,
   onChangeCheckbox,
   onEditListTitle,
@@ -24,6 +23,10 @@ export const FinanceFields = ({
 
   const onComplete = (e) => {
     onChangeCheckbox(id, e.target.checked)
+    if(!e.target.checked){
+      setNumber1(0)
+      setNumber2(0)
+    }
   }
 
   return (
@@ -41,15 +44,19 @@ export const FinanceFields = ({
                 />
               }
             >
-              <p>{name}</p>
+              {name !== null 
+              ? <p>{name}</p>
+              : <p>Введите название</p>
+              }
             </Popover>
           </div>
         </Col>
         <Col span={8}>
           <div className="item-sum">
             <Input
+              type='number'
               value={number1}
-              placeholder={count}
+              placeholder={'200 руб'}
               disabled={!completed}
               onChange={(e) => setNumber1(+e.target.value)}
             />
@@ -58,8 +65,9 @@ export const FinanceFields = ({
         <Col span={8}>
           <div className="item-count">
             <Input
+              type='number'
               value={number2}
-              placeholder={count}
+              placeholder={'2 раза'}
               disabled={!completed}
               onChange={(e) => setNumber2(+e.target.value)}
             />

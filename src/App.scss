@@ -57,4 +57,18 @@
       margin-right: 15px;
     }
   }
+
+  .finance__grid-footer{
+    .options__deposit{
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      .selectPercent{
+        width: 200px;
+      }
+      input{
+        width: 100px;
+      }
+    }
+  }
 }

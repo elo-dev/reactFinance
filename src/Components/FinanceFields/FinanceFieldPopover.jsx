@@ -5,13 +5,17 @@ export const FinanceFieldPopover = ({ id, name, onEditListTitle }) => {
 
     const onEditTitle = (e) => {
         const newTitle = e.target.value
-        onEditListTitle(id, newTitle)
+        if(newTitle){
+            onEditListTitle(id, newTitle)
+        } else if(newTitle === ''){
+            onEditListTitle(id, null)
+        }
     }
 
     return(
         <div className="popover">
             <p>Измените название</p>
-            <Input value={name} onChange={onEditTitle} />
+            <Input value={name} placeholder='Введите название' onChange={onEditTitle} />
         </div>
     )
 }
