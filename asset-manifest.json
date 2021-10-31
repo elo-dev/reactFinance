@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/reactFinance/static/css/main.2f10358b.chunk.css",
-    "main.js": "/reactFinance/static/js/main.05821f31.chunk.js",
-    "main.js.map": "/reactFinance/static/js/main.05821f31.chunk.js.map",
+    "main.css": "/reactFinance/static/css/main.d690a11a.chunk.css",
+    "main.js": "/reactFinance/static/js/main.49693e4c.chunk.js",
+    "main.js.map": "/reactFinance/static/js/main.49693e4c.chunk.js.map",
     "runtime-main.js": "/reactFinance/static/js/runtime-main.d0622a15.js",
     "runtime-main.js.map": "/reactFinance/static/js/runtime-main.d0622a15.js.map",
     "static/css/2.786ae0dd.chunk.css": "/reactFinance/static/css/2.786ae0dd.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.72b6315d.chunk.js.map": "/reactFinance/static/js/3.72b6315d.chunk.js.map",
     "index.html": "/reactFinance/index.html",
     "static/css/2.786ae0dd.chunk.css.map": "/reactFinance/static/css/2.786ae0dd.chunk.css.map",
-    "static/css/main.2f10358b.chunk.css.map": "/reactFinance/static/css/main.2f10358b.chunk.css.map",
+    "static/css/main.d690a11a.chunk.css.map": "/reactFinance/static/css/main.d690a11a.chunk.css.map",
     "static/js/2.863802fe.chunk.js.LICENSE.txt": "/reactFinance/static/js/2.863802fe.chunk.js.LICENSE.txt",
     "static/media/delete.91cd8008.svg": "/reactFinance/static/media/delete.91cd8008.svg",
     "static/media/loading.ab6cafe8.gif": "/reactFinance/static/media/loading.ab6cafe8.gif",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.d0622a15.js",
     "static/css/2.786ae0dd.chunk.css",
     "static/js/2.863802fe.chunk.js",
-    "static/css/main.2f10358b.chunk.css",
-    "static/js/main.05821f31.chunk.js"
+    "static/css/main.d690a11a.chunk.css",
+    "static/js/main.49693e4c.chunk.js"
   ]
 }
