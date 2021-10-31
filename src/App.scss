@@ -15,6 +15,7 @@
   border-radius: 10px;
   border: 1px solid #f1f1f1;
   padding: 25px;
+  min-width: 450px;
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -42,19 +43,25 @@
     }
   }
 
-  &__grid-item {
+  &__grid-items {
     margin-bottom: 20px;
-    .item-checkbox {
-      display: flex;
-      justify-content: center;
-      p {
-        align-items: center;
-        margin-left: 10px;
-      }
+
+    .no-data{
+      width: 250px;
+      height: 270px;
     }
 
-    .item-sum {
-      margin-right: 15px;
+    .newItem{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      p{
+        font-weight: bold;
+        padding-top: 15px;
+      }
+      input{
+        width: 65%;
+      }
     }
   }
 
@@ -70,5 +77,11 @@
         width: 100px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .finance{
+    width: 50%;
   }
 }

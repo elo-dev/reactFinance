@@ -1,0 +1,18 @@
+.finance__gridItem {
+    .finance__gridRow {
+      max-height: 40px;
+      .item__sum {
+        margin-right: 15px;
+      }
+      .deleteIcon{
+        width: 20px;
+        height: 20px;
+        margin-top: 6px;
+        cursor: pointer;
+        &:hover{
+          background-color: rgb(255, 100, 100);
+          border-radius: 50%;
+        }
+      }
+    }
+  }

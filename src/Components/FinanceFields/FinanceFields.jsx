@@ -1,6 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import { Checkbox, Col, Input, Popover, Row } from 'antd'
 import { FinanceFieldPopover } from './FinanceFieldPopover'
+import style from './FinanceFields.module.scss'
+import deleteIcon from '../../assets/delete.svg'
 
 export const FinanceFields = ({
   id,
@@ -8,10 +10,11 @@ export const FinanceFields = ({
   completed,
   onChangeCheckbox,
   onEditListTitle,
-  onChange
+  onChange,
+  removeItem
 }) => {
-  const [number1, setNumber1] = useState(0)
-  const [number2, setNumber2] = useState(0)
+  const [number1, setNumber1] = useState('')
+  const [number2, setNumber2] = useState('')
 
   const total = useMemo(() => {
     return number1 * number2
@@ -29,11 +32,21 @@ export const FinanceFields = ({
     }
   }
 
+  const numberValidate1 = (num) => {
+    const newNumber = num.toString().replace(/[^\d]/g,'')
+    setNumber1(newNumber)
+  }
+
+  const numberValidate2 = (num) => {
+    const newNumber = num.toString().replace(/[^\d]/g,'')
+    setNumber2(newNumber)
+  }
+
   return (
-    <div className="finance__grid-item">
-      <Row>
-        <Col span={8}>
-          <div className="item-checkbox">
+    <div className={style.finance__gridItem}>
+      <Row className={style.finance__gridRow}>
+        <Col span={7}>
+          <div>
             <Checkbox checked={completed} onChange={onComplete} />
             <Popover
               content={
@@ -44,34 +57,38 @@ export const FinanceFields = ({
                 />
               }
             >
-              {name !== null 
-              ? <p>{name}</p>
-              : <p>Введите название</p>
+              {!name
+              ? <p>Введите название</p>
+              : <p>{name}</p>
               }
             </Popover>
           </div>
         </Col>
-        <Col span={8}>
-          <div className="item-sum">
+        <Col span={7}>
+          <div className={style.item__sum}>
             <Input
-              type='number'
+              type='text'
               value={number1}
               placeholder={'200 руб'}
               disabled={!completed}
-              onChange={(e) => setNumber1(+e.target.value)}
+              // onChange={(e) => setNumber1(+e.target.value)}
+              onChange={(e) => numberValidate1(+e.target.value)}
             />
           </div>
         </Col>
-        <Col span={8}>
+        <Col span={7}>
           <div className="item-count">
             <Input
               type='number'
               value={number2}
               placeholder={'2 раза'}
               disabled={!completed}
-              onChange={(e) => setNumber2(+e.target.value)}
+              onChange={(e) => numberValidate2(+e.target.value)}
             />
           </div>
+        </Col>
+        <Col span={3}>
+          <img src={deleteIcon} alt="delete" className={style.deleteIcon} onClick={() => removeItem(id)} />
         </Col>
       </Row>
       <h2>{total}</h2>
